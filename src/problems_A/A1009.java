@@ -15,11 +15,13 @@ public class A1009 {
         for (int i = 0; i < m; i++) {
             ar2[i] = in.nextInt();
         }
-
+        int cnt = 0;
         for (int i = 0, j = 0; i < n && j < m; i++) {
             if (ar2[j] >= ar1[i]) {
-
+                cnt++;
+                j++;
             }
         }
+        System.out.println(cnt);
     }
 }
