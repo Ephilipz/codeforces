@@ -8,10 +8,14 @@ public class B1017 {
         int n = in.nextInt();
         String a = in.next();
         String b = in.next();
-        int count0b = b.length() - b.replace("0", "").length();
-        int count0a = a.length() - a.replace("0", "").length();
-        int count1a = a.length() - a.replace("1", "").length();
-        boolean has1andZero = a.contains("0") && a.contains("1");
-        System.out.println(has1andZero ? count0b * Math.min(count0a, count1a) : 0);
+        int[] cnts = new int[4];
+        for (int i = 0; i < n; i++) {
+            String curr = Character.toString(a.charAt(i)) + Character.toString(b.charAt(i));
+            if ("00".equals(curr)) cnts[0]++;
+            else if ("10".equals(curr)) cnts[1]++;
+            else if ("11".equals(curr)) cnts[2]++;
+            else cnts[3]++;
+        }
+        System.out.println(cnts[0] * cnts[1] + cnts[0] * cnts[2] + cnts[3] * cnts[1]);
     }
 }
