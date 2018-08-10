@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class B1017 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        long n = in.nextLong();
         String a = in.next();
         String b = in.next();
-        int[] cnts = new int[4];
+        long[] cnts = new long[4];
         for (int i = 0; i < n; i++) {
             String curr = Character.toString(a.charAt(i)) + Character.toString(b.charAt(i));
             if ("00".equals(curr)) cnts[0]++;
